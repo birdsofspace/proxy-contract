@@ -5,7 +5,7 @@ const path = require("path");
 
 async function main() {
 
-  const contractName = "Token";
+  const contractName = "Proxy";
   // This is just a convenience check
   if (network.name === "hardhat") {
     console.warn(
@@ -25,7 +25,7 @@ async function main() {
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const Token = await ethers.getContractFactory(contractName);
-  const token = await Token.deploy();
+  const token = await Token.deploy("0x2e8ce4cc0fe85e9dbe3e1eafb8bcfc88af513633");
   await token.deployed();
 
   console.log("Token address:", token.address);
@@ -45,21 +45,21 @@ function saveFrontendFiles(token) {
     fs.readFileSync(path.join(contractsDir, "smartcontract.json"), "utf8")
   );
 
-  const TokenArtifact = artifacts.readArtifactSync("Token");
+  const TokenArtifact = artifacts.readArtifactSync("Proxy");
   const abi = TokenArtifact.abi;
   const contractAddress = token.address;
   try {
     smartContract.results.push({
       json_abi: abi,
       contract_address: contractAddress,
-      contract_name: "Token",
+      contract_name: "Proxy",
     });
   } catch (error) {
     smartContract = {
       results: [{
         json_abi: abi,
         contract_address: contractAddress,
-        contract_name: "Token",
+        contract_name: "Proxy",
       }]
     };
   }

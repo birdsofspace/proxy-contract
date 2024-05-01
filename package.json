@@ -6,7 +6,9 @@
     "test": "hardhat test",
     "frontend": "yarn workspace frontend",
     "deploy": "npx hardhat run scripts/deploy.js --network truffle",
-    "truffle-dashboard": "truffle dashboard"
+    "docgen": "npx hardhat docgen",
+    "truffle-dashboard": "truffle dashboard",
+    "audit": "sca2t dependencies contracts/ERC20BulkSender.sol"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,13 @@
     "frontend"
   ],
   "dependencies": {
-    "@truffle/dashboard-hardhat-plugin": "^0.2.15"
+    "@truffle/dashboard-hardhat-plugin": "^0.2.15",
+    "chalk": "^5.3.0",
+    "global": "^4.4.0",
+    "md-to-pdf": "^5.2.4",
+    "puppeteer": "^22.5.0",
+    "sca2t": "^0.8.0",
+    "snyk-to-html": "^2.5.0",
+    "solidity-docgen": "^0.6.0-beta.36"
   }
 }

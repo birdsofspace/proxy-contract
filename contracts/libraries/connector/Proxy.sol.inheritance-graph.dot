@@ -1,0 +1,7 @@
+digraph "" {
+Proxy -> Storage;
+Proxy[shape="box"label=< <TABLE border="0"><TR><TD align="center"><B>Proxy</B></TD></TR><TR><TD align="left"><I>Public Functions:</I></TD></TR><TR><TD align="left">    addAdmin(address)</TD></TR><TR><TD align="left">    removeAdmin(address)</TD></TR><TR><TD align="left">    upgradeImplementation(address)</TD></TR><TR><TD align="left">    fallback()</TD></TR><TR><TD align="left">    receive()</TD></TR><TR><TD align="left"><I>Private Functions:</I></TD></TR><TR><TD align="left">    listAdmin()</TD></TR><TR><TD align="left"><I>Modifiers:</I></TD></TR><TR><TD align="left">    onlyAdmin()</TD></TR><TR><TD align="left"><I>Private Variables:</I></TD></TR><TR><TD align="left">    functionalAddress</TD></TR></TABLE> >];
+
+Storage[shape="box"label=< <TABLE border="0"><TR><TD align="center"><B>Storage</B></TD></TR><TR><TD align="left"><I>Public Variables:</I></TD></TR><TR><TD align="left">    _owner</TD></TR><TR><TD align="left">    _initialized</TD></TR><TR><TD align="left"><I>Private Variables:</I></TD></TR><TR><TD align="left">    _uintStorage</TD></TR><TR><TD align="left">    _addressStorage</TD></TR><TR><TD align="left">    _boolStorage</TD></TR><TR><TD align="left">    _stringStorage</TD></TR><TR><TD align="left">    _bytesStorage</TD></TR><TR><TD align="left">    _proxyAdmin</TD></TR></TABLE> >];
+
+}
